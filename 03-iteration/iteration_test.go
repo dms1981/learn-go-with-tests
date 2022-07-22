@@ -1,11 +1,12 @@
-package iteration
+package main
 
 import (
   "testing"
+  "fmt"
 )
 
 func TestRepeat(t *testing.T) {
-  repeated := Repeat("a")
+  repeated := Repeat("a", 5)
   expected := "aaaaa"
 
   if repeated != expected {
@@ -15,6 +16,11 @@ func TestRepeat(t *testing.T) {
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("a")
+		Repeat("a", 5)
 	}
+}
+
+func ExampleAdd() {
+  fmt.Println(Repeat("a", 5))
+  // Output: aaaaa
 }
